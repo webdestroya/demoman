@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "demoman"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Library for reading metadata from Half-Life demo files}
+    gem.description = %Q{Library for reading metadata from Half-Life demo files}
     gem.email = "mrdempsey@gmail.com"
     gem.homepage = "http://github.com/webdestroya/demoman"
     gem.authors = ["Mitch Dempsey"]
