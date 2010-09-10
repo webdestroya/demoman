@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "demoman.gemspec",
      "lib/demoman.rb",
      "test/helper.rb",
      "test/test.dem",
@@ -35,7 +36,6 @@ Gem::Specification.new do |s|
   s.summary = %q{Library for reading metadata from Half-Life demo files}
   s.test_files = [
     "test/helper.rb",
-    "test/test.dem"
      "test/test_demoman.rb"
   ]
 
