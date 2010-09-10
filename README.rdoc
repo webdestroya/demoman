@@ -1,6 +1,6 @@
 = demoman
 
-Description goes here.
+Demoman allows you to extract metadata from Half-Life and Half-Life 2 demo (.dem) files.
 
 == Note on Patches/Pull Requests
  
