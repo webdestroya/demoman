@@ -18,29 +18,29 @@ And add the gem to your environment.rb configuration as a gem dependency:
 h2. Usage
 
 <pre>
-	demo_object = Demoman.new("test/test.dem")
+  demo_object = Demoman.new("test/test.dem")
 
-	# Server IP Address
-	puts demo_object.server_address
-	
-	
-	# Player who recorded the demo
-	puts demo_object.player_name
-	
-	# The map being played
-	puts demo_object.map
-	
-	# The game directory (dod, tf2, ...)
-	puts demo_object.game_dir
-	
-	# The duration of the demo (in seconds)
-	puts demo_object.duration
-	
-	# The number of ticks in the demo
-	puts demo_object.ticks
-	
-	# The total number of frames
-	puts demo_object.frames
+  # Server IP Address
+  puts demo_object.server_address
+
+
+  # Player who recorded the demo
+  puts demo_object.player_name
+
+  # The map being played
+  puts demo_object.map
+
+  # The game directory (dod, tf2, ...)
+  puts demo_object.game_dir
+
+  # The duration of the demo (in seconds)
+  puts demo_object.duration
+
+  # The number of ticks in the demo
+  puts demo_object.ticks
+
+  # The total number of frames
+  puts demo_object.frames
 
 </pre>
 
