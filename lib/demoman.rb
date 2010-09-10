@@ -1,7 +1,7 @@
 
 class Demoman
   
-  attr_reader :server_address, :player_name, :map, :game, :demo_protocol, :network_protocol, :type, :duration, :ticks, :frames, :sign_on_length
+  attr_reader :server_address, :player_name, :map, :game_dir, :demo_protocol, :network_protocol, :type, :duration, :ticks, :frames, :sign_on_length
   
   def initialize(file)
     io = File.new(file, "r")
@@ -16,7 +16,7 @@ class Demoman
     @server_address = demodata[3]
     @player_name = demodata[4]
     @map = demodata[5]
-    @game = demodata[6]
+    @game_dir = demodata[6]
     
     @duration = demodata[7]
     @ticks = demodata[8]
@@ -25,20 +25,5 @@ class Demoman
     
     
   end
-  
-=begin
-$ret = array(
-		'DemoProtocol'=>$parts['dem'],
-		'NetworkProtocol'=>$parts['net'],
-		'ServerHost'=>$parts['server'],
-		'ClientName'=>$parts['client'],
-		'Map'=>$parts['map'],
-		'GameDir'=>$parts['dir'],
-		'Length'=>$parts['time'],
-		'Ticks'=>$parts['ticks'],
-		'Frames'=>$parts['frames'],
-		'SignOnLength'=>$parts['signon'],
-		);
-=end  
   
 end
