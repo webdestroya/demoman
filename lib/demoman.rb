@@ -3,12 +3,31 @@ class Demoman
   
   attr_reader :server_address, :player_name, :map, :game_dir, :demo_protocol, :network_protocol, :type, :duration, :ticks, :frames, :sign_on_length
   
-  def initialize(file)
-    io = File.new(file, "r")
+  def initialize(file=nil)
     
+    unless file.nil?
+      io = File.new(file, "r")
+      data = io.sysread(4096)
+      parse_data data
+    end
+    
+  end
+  
+  def self.from_file(file)
+    io = File.new(file, "r")
     data = io.sysread(4096)
     
-    
+    Demoman.from_string(data)
+  end
+  
+  def self.from_string(data)
+    demoman = Demoman.new
+    demoman.parse_data(data)
+    demoman
+  end
+  
+  
+  def parse_data(data)
     demodata = data.unpack("A8/I/I/A260/A260/A260/A260/f/I/I/I/")
     @type = demodata[0]
     @demo_protocol = demodata[1]
@@ -22,8 +41,8 @@ class Demoman
     @ticks = demodata[8]
     @frames = demodata[9]
     @sign_on_length = demodata[10]
-    
-    
+    nil
   end
+  
   
 end

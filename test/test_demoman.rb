@@ -18,4 +18,40 @@ class TestDemoman < Test::Unit::TestCase
     #["HL2DEMO", 3, 7, "69.90.189.79:27037", "Ham Salad[AOF]", "dod_jagd", "dod", 13.2424249649048, 874, 390, 115449]
     
   end
+  
+  should "new style load demo" do
+
+    demoman = Demoman.from_file("test/test.dem")
+    
+    assert_equal "69.90.189.79:27037", demoman.server_address
+    assert_equal "Ham Salad[AOF]", demoman.player_name
+    assert_equal "dod_jagd", demoman.map
+    assert_equal "dod", demoman.game_dir
+    assert_equal 3, demoman.demo_protocol
+    assert_equal 7, demoman.network_protocol
+    
+    assert_equal 874, demoman.ticks
+    assert_equal 390, demoman.frames
+    assert_equal 115449, demoman.sign_on_length
+  end
+  
+  should "read from string" do
+    io = File.new("test/test.dem", "r")
+    data = io.sysread(4096)
+    
+    demoman = Demoman.from_string(data)
+    
+    assert_equal "69.90.189.79:27037", demoman.server_address
+    assert_equal "Ham Salad[AOF]", demoman.player_name
+    assert_equal "dod_jagd", demoman.map
+    assert_equal "dod", demoman.game_dir
+    assert_equal 3, demoman.demo_protocol
+    assert_equal 7, demoman.network_protocol
+    
+    assert_equal 874, demoman.ticks
+    assert_equal 390, demoman.frames
+    assert_equal 115449, demoman.sign_on_length
+    
+  end
+  
 end
