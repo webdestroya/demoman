@@ -18,7 +18,12 @@ And add the gem to your environment.rb configuration as a gem dependency:
 h2. Usage
 
 <pre>
-  demo_object = Demoman.new("test/test.dem")
+  # Load a file
+  demo_object = Demoman.from_file("test/test.dem")
+
+  # OR Load from a string
+  demo_object = Demoman.from_string("##DEMO_DATA##")
+
 
   # Server IP Address
   puts demo_object.server_address

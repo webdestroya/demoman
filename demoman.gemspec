@@ -5,22 +5,22 @@
 
 Gem::Specification.new do |s|
   s.name = %q{demoman}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mitch Dempsey"]
-  s.date = %q{2010-09-09}
+  s.date = %q{2010-09-11}
   s.description = %q{Library for reading metadata from Half-Life demo files}
   s.email = %q{mrdempsey@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.textile"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
-     "README.rdoc",
+     "README.textile",
      "Rakefile",
      "VERSION",
      "demoman.gemspec",
