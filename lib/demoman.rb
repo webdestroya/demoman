@@ -1,5 +1,5 @@
 require "demoman/version"
-require "demoman/demo"
+require "demoman/demo_file"
 
 module Demoman
   
@@ -12,9 +12,9 @@ module Demoman
   end
   
   def self.from_string(data)
-    demoman = Demo.new
-    demoman.parse_data(data)
-    demoman
+    demo = DemoFile.new
+    demo.parse_data(data)
+    demo
   end
   
   

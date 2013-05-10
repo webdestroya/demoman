@@ -2,7 +2,7 @@ require_relative 'test_helper'
 
 describe Demoman do
   it "read demo" do
-    demoman = Demoman::Demo.new("test/data/test.dem")
+    demoman = Demoman::DemoFile.new("test/data/test.dem")
     
     assert_equal "69.90.189.79:27037", demoman.server_address
     assert_equal "Ham Salad[AOF]", demoman.player_name

@@ -1,6 +1,6 @@
 module Demoman
 
-  class Demo
+  class DemoFile
 
     attr_reader :server_address, :player_name, :map, :game_dir, :demo_protocol, :network_protocol, :type, :duration, :ticks, :frames, :sign_on_length
     
