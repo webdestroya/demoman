@@ -1,8 +1,8 @@
-require 'helper'
+require_relative 'test_helper'
 
-class TestDemoman < Test::Unit::TestCase
-  should "read demo" do
-    demoman = Demoman.new("test/test.dem")
+describe Demoman do
+  it "read demo" do
+    demoman = Demoman::Demo.new("test/data/test.dem")
     
     assert_equal "69.90.189.79:27037", demoman.server_address
     assert_equal "Ham Salad[AOF]", demoman.player_name
@@ -19,9 +19,9 @@ class TestDemoman < Test::Unit::TestCase
     
   end
   
-  should "new style load demo" do
+  it "new style load demo" do
 
-    demoman = Demoman.from_file("test/test.dem")
+    demoman = Demoman.from_file("test/data/test.dem")
     
     assert_equal "69.90.189.79:27037", demoman.server_address
     assert_equal "Ham Salad[AOF]", demoman.player_name
@@ -35,8 +35,8 @@ class TestDemoman < Test::Unit::TestCase
     assert_equal 115449, demoman.sign_on_length
   end
   
-  should "read from string" do
-    io = File.new("test/test.dem", "r")
+  it "read from string" do
+    io = File.new("test/data/test.dem", "r")
     data = io.sysread(4096)
     
     demoman = Demoman.from_string(data)
@@ -52,6 +52,16 @@ class TestDemoman < Test::Unit::TestCase
     assert_equal 390, demoman.frames
     assert_equal 115449, demoman.sign_on_length
     
+  end
+
+  it "loads a SourceTV demo" do
+
+    demoman = Demoman.from_file("test/data/sourcetv.dem")
+    
+    assert_equal "WebDestroya's Stomping Grounds | MitchDB.com", demoman.server_address
+    assert_equal "SourceTV Demo", demoman.player_name
+    assert_equal "ctf_well", demoman.map
+    assert_equal "tf", demoman.game_dir
   end
   
 end
