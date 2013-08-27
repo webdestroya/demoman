@@ -11,6 +11,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Library for reading metadata from Half-Life demo files}
   gem.summary       = %q{Library for reading metadata from Half-Life demo files}
   gem.homepage      = "http://www.mitchdb.com/"
+  gem.license       = 'GPL-3'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
