@@ -75,8 +75,6 @@ describe Demoman do
     demoman = Demoman.from_string("asdasdasdasdasdasdaasdasdasdass")
     demoman.parsed?.should be_true
     demoman.valid?.should be_false
-
-    puts demoman.inspect
   end
 
 end
