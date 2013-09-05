@@ -51,6 +51,10 @@ puts demo_object.frames
 ```
 
 
+## Documentation
+
+Demoman is fully documented. Feel free to check out the [API Documentation](http://rubydoc.info/github/webdestroya/demoman/master/frames)
+
 
 ## Note on Patches/Pull Requests
  
