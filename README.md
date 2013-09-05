@@ -1,5 +1,10 @@
 # demoman
 
+
+[![Build Status](https://travis-ci.org/webdestroya/demoman.png)](https://travis-ci.org/webdestroya/demoman)
+[![Code Climate](https://codeclimate.com/github/webdestroya/demoman.png)](https://codeclimate.com/github/webdestroya/demoman)
+[![Coverage Status](https://coveralls.io/repos/webdestroya/demoman/badge.png)](https://coveralls.io/r/webdestroya/demoman)
+
 Demoman allows you to extract metadata from Half-Life and Half-Life 2 demo (.dem) files.
 
 ## Installation
@@ -14,37 +19,37 @@ And add the gem to your Gemfile:
 
 ## Usage
 
+```ruby
+# Load a file
+demo_object = Demoman.from_file("test/test.dem")
 
-    # Load a file
-    demo_object = Demoman.from_file("test/test.dem")
-
-    # OR Load from a string
-    demo_object = Demoman.from_string("##DEMO_DATA##")
-
-
-    # Server IP Address
-    puts demo_object.server_address
+# OR Load from a string
+demo_object = Demoman.from_string("##DEMO_DATA##")
 
 
-    # Player who recorded the demo
-    puts demo_object.player_name
+# Server IP Address
+puts demo_object.server_address
 
-    # The map being played
-    puts demo_object.map
 
-    # The game directory (dod, tf2, ...)
-    puts demo_object.game_dir
+# Player who recorded the demo
+puts demo_object.player_name
 
-    # The duration of the demo (in seconds)
-    puts demo_object.duration
+# The map being played
+puts demo_object.map
 
-    # The number of ticks in the demo
-    puts demo_object.ticks
+# The game directory (dod, tf2, ...)
+puts demo_object.game_dir
 
-    # The total number of frames
-    puts demo_object.frames
+# The duration of the demo (in seconds)
+puts demo_object.duration
 
-</pre>
+# The number of ticks in the demo
+puts demo_object.ticks
+
+# The total number of frames
+puts demo_object.frames
+```
+
 
 
 ## Note on Patches/Pull Requests
@@ -57,6 +62,10 @@ And add the gem to your Gemfile:
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
+## License
+
+GPLv3
+
 ## Copyright
 
-Copyright (c) 2012 Mitch Dempsey. See LICENSE for details.
+Copyright (c) 2013 Mitch Dempsey. See LICENSE for details.
